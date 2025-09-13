@@ -6,8 +6,8 @@ export default async function ProductsPage(){
 		expand: ["data.default_price"]
 	})
 
-	return <div>
-		<h1>All products</h1>
+	return <div className="pb-8">
+		<h1 className="text-3xl font-bold leading-none tracking-tight text-foreground text-center mb-8">All products</h1>
 		<ProductList products={products.data}/>
 	</div>
 }
