@@ -9,5 +9,7 @@ export default async function ProductPage({
 	const product = await stripe.products.retrieve(params.id, {
 		expand: ["default_price"],
 	})
-	return <ProductDetail product={product}/> //Not doing ui here as this is an async function (server) and we want to pass the data down as props into a client component
+
+	const plainProduct = JSON.parse(JSON.stringify(product))
+	return <ProductDetail product={plainProduct}/> //Not doing ui here as this is an async function (server) and we want to pass the data down as props into a client component
 }
